@@ -14,3 +14,7 @@ The root [`BUILD.bazel`](BUILD.bazel) file contains the `platform` and
 `xcode_config` setup telling bazel how the remote executors are
 configured. This is then wired up in the [`.bazelrc`](.bazelrc). See the
 comments in those files for more details.
+
+Also see [Reddit's write
+up](https://www.reddit.com/r/bazel/comments/1onrpbq/leveraging_bazel_multiplatform_rbe_for_reddits)
+of this setup for more details.

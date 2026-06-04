@@ -4,15 +4,12 @@ load("@apple_support//xcode:xcode_version.bzl", "xcode_version")
 # Create a platform that represents the macOS executors in your cluster
 platform(
     name = "macos",
-    constraint_values = [
-        "@platforms//os:macos",
-        "@platforms//cpu:arm64",
-    ],
     exec_properties = {
         # NOTE: This could also require a 'Pool' depending on your remote execution setup
         "Arch": "arm64",
         "OSFamily": "darwin",
     },
+    parents = ["@apple_support//platforms:macos_arm64"],
 )
 
 # Define what Xcode version(s) are available on your macOS executors
