@@ -1,4 +1,3 @@
-build --host_platform=//:macos
 build --extra_execution_platforms=//:macos
 # NOTE: This applies to macOS too which is likely what you want to make sure the
 # same Xcode version is used and therefore cache is shared.
