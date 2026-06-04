@@ -8,6 +8,11 @@ platform(
         # NOTE: This could also require a 'Pool' depending on your remote execution setup
         "Arch": "arm64",
         "OSFamily": "darwin",
+        # Recommended for buildbuddy to improve performance for subsequent
+        # actions on the same executor, see
+        # https://www.buildbuddy.io/docs/rbe-platforms for more details
+        "recycle-runner": "true",
+        "preserve-workspace": "true",
     },
     parents = ["@apple_support//platforms:macos_arm64"],
 )
