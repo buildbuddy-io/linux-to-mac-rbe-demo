@@ -11,6 +11,7 @@ platform(
         # Recommended for buildbuddy to improve performance for subsequent
         # actions on the same executor, see
         # https://www.buildbuddy.io/docs/rbe-platforms for more details
+        "clean-workspace-inputs": "*",
         "recycle-runner": "true",
         "preserve-workspace": "true",
     },
