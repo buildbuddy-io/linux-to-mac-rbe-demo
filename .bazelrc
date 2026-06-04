@@ -1,3 +1,4 @@
+build --host_platform=//:macos
 build --extra_execution_platforms=//:macos
 # NOTE: This applies to macOS too which is likely what you want to make sure the
 # same Xcode version is used and therefore cache is shared.
@@ -7,5 +8,6 @@ build --xcode_version_config=//:host_xcodes
 build:buildbuddy --bes_backend=grpcs://remote.buildbuddy.io
 build:buildbuddy --bes_results_url=https://app.buildbuddy.io/invocation/
 build:buildbuddy --remote_cache=grpcs://remote.buildbuddy.io
+build:buildbuddy --remote_executor=grpcs://remote.buildbuddy.io
 
 try-import %workspace%/user.bazelrc
