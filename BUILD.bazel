@@ -1,0 +1,43 @@
+load("@apple_support//xcode:xcode_config.bzl", "xcode_config")
+load("@apple_support//xcode:xcode_version.bzl", "xcode_version")
+
+# Create a platform that represents the macOS executors in your cluster
+platform(
+    name = "macos",
+    constraint_values = [
+        "@platforms//os:macos",
+        "@platforms//cpu:arm64",
+    ],
+    exec_properties = {
+        # NOTE: This could also require a 'Pool' depending on your remote execution setup
+        "Arch": "arm64",
+        "OSFamily": "darwin",
+    },
+)
+
+# Define what Xcode version(s) are available on your macOS executors
+#
+# You can Copy this from a macOS host in:
+# bazel-out/../../../external/bazel_tools+xcode_configure_extension+local_config_xcode/BUILD
+xcode_version(
+    name = "default_xcode_version",
+    aliases = [
+        "16.4.0",
+        "16.4.0.16F6",
+        "16F6",
+    ],
+    default_ios_sdk_version = "18.5",
+    default_macos_sdk_version = "15.5",
+    default_tvos_sdk_version = "18.5",
+    default_visionos_sdk_version = "2.5",
+    default_watchos_sdk_version = "11.5",
+    version = "16.4.0.16F6",
+)
+
+# This is referenced from .bazelrc
+xcode_config(
+    name = "host_xcodes",
+    default = ":default_xcode_version",
+    # NOTE: You can define multiple versions, in which case it will respect --xcode_version
+    versions = [":default_xcode_version"],
+)

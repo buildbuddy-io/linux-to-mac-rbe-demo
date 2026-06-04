@@ -1,0 +1,19 @@
+load("@rules_apple//apple:ios.bzl", "ios_application")
+load("@rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "AppLibrary",
+    srcs = glob(["**/*.swift"]),
+    tags = ["manual"],
+)
+
+ios_application(
+    name = "DemoApp",
+    bundle_id = "com.buildbuddy.demoapp",
+    families = [
+        "iphone",
+        "ipad",
+    ],
+    minimum_os_version = "26.0",
+    deps = [":AppLibrary"],
+)

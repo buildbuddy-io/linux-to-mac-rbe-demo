@@ -1,0 +1,4 @@
+/bazel-*
+/external
+/MODULE.bazel.lock
+/user.bazelrc
