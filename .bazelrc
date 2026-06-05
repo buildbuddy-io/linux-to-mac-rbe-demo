@@ -1,4 +1,5 @@
 build --ios_multi_cpus=sim_arm64
+build --ios_simulator_device="iPhone 16 Pro"
 
 build --extra_execution_platforms=//:macos
 # NOTE: This applies to macOS too which is likely what you want to make sure the
