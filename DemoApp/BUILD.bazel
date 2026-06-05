@@ -1,9 +1,9 @@
-load("@rules_apple//apple:ios.bzl", "ios_application")
+load("@rules_apple//apple:ios.bzl", "ios_application", "ios_unit_test")
 load("@rules_swift//swift:swift.bzl", "swift_library")
 
 swift_library(
     name = "AppLibrary",
-    srcs = glob(["**/*.swift"]),
+    srcs = ["DemoApp.swift"],
     tags = ["manual"],
 )
 
@@ -16,4 +16,17 @@ ios_application(
     ],
     minimum_os_version = "26.0",
     deps = [":AppLibrary"],
+)
+
+swift_library(
+    name = "DemoTestLib",
+    testonly = True,
+    srcs = ["DemoTest.swift"],
+    tags = ["manual"],
+)
+
+ios_unit_test(
+    name = "DemoTest",
+    minimum_os_version = "18.5",
+    deps = [":DemoTestLib"],
 )
