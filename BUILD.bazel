@@ -25,16 +25,15 @@ platform(
 xcode_version(
     name = "default_xcode_version",
     aliases = [
-        "16.4.0",
-        "16.4.0.16F6",
-        "16F6",
+        "26.5.0.17F42",
+        "17F42",
     ],
-    default_ios_sdk_version = "18.5",
-    default_macos_sdk_version = "15.5",
-    default_tvos_sdk_version = "18.5",
-    default_visionos_sdk_version = "2.5",
-    default_watchos_sdk_version = "11.5",
-    version = "16.4.0.16F6",
+    default_ios_sdk_version = "26.5",
+    default_macos_sdk_version = "26.5",
+    default_tvos_sdk_version = "26.5",
+    default_visionos_sdk_version = "26.5",
+    default_watchos_sdk_version = "26.5",
+    version = "26.5.0.17F42",
 )
 
 # This is referenced from .bazelrc
