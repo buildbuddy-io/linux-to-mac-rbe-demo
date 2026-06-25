@@ -31,3 +31,6 @@ You can get a free API key [here](https://app.buildbuddy.io/settings/personal/ap
 
 You can also use your own remote execution service as long as you have
 macOS executors available by passing the relevant `--remote_executor`.
+
+This demo can also be built on macOS, but you must have Xcode installed
+(and opened at least once) to do so.
