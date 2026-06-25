@@ -29,6 +29,8 @@ bazel build --config=buildbuddy DemoApp --remote_header=x-buildbuddy-api-key=<YO
 
 You can get a free API key [here](https://app.buildbuddy.io/settings/personal/api-keys)
 
+Please Note: Personal account does not have mac cores in [free account](https://github.com/buildbuddy-io/linux-to-mac-rbe-demo/issues/7)  
+
 You can also use your own remote execution service as long as you have
 macOS executors available by passing the relevant `--remote_executor`.
 
