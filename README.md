@@ -24,13 +24,15 @@ of this setup for more details.
 To build this demo locally, build on a Linux host using remote execution:
 
 ```bash
-bazel build --config=buildbuddy DemoApp --remote_header=x-buildbuddy-api-key=<YOUR_API_KEY>
+bazel build DemoApp --remote_executor=<YOUR_REMOTE_URL>
 ```
 
-You can get a free API key [here](https://app.buildbuddy.io/settings/personal/api-keys)
+If you have a BuildBuddy account with macOS executors available (not a
+free account), you can use the following command:
 
-You can also use your own remote execution service as long as you have
-macOS executors available by passing the relevant `--remote_executor`.
+```bash
+bazel build --config=buildbuddy DemoApp --remote_header=x-buildbuddy-api-key=<YOUR_API_KEY>
+```
 
 This demo can also be built on macOS, but you must have Xcode installed
 (and opened at least once) to do so.
