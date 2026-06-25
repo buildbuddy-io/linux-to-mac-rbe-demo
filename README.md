@@ -18,3 +18,16 @@ comments in those files for more details.
 Also see [Reddit's write
 up](https://www.reddit.com/r/bazel/comments/1onrpbq/leveraging_bazel_multiplatform_rbe_for_reddits)
 of this setup for more details.
+
+## Usage
+
+To build this demo locally, build on a Linux host using remote execution:
+
+```bash
+bazel build --config=buildbuddy DemoApp --remote_header=x-buildbuddy-api-key=<YOUR_API_KEY>
+```
+
+You can get a free API key [here](https://app.buildbuddy.io/settings/personal/api-keys)
+
+You can also use your own remote execution service as long as you have
+macOS executors available by passing the relevant `--remote_executor`.
