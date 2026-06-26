@@ -36,3 +36,27 @@ bazel build --config=buildbuddy DemoApp --remote_header=x-buildbuddy-api-key=<YO
 
 This demo can also be built on macOS, but you must have Xcode installed
 (and opened at least once) to do so.
+
+## Configure Mac machine as remote executor
+Create API key on Buildbuddy with `Executor Key(for self-hosted executors)` option enabled.
+
+Now, download and run platform specific executor binary on your mac. Following is for M4
+```
+curl -fsSL https://github.com/buildbuddy-io/buildbuddy/releases/download/v2.280.0/executor-enterprise-darwin-arm64  -o executor  
+chmod +x executor
+./executor \                                                                                                                   
+  --executor.api_key=<EXECUTOR_API_KEY> \
+  --executor.app_target=grpcs://remote.buildbuddy.io \
+  --executor.local_cache_size_bytes=10000000000
+```
+
+From Linux terminal, one can now compile the code as usual
+```
+bazel build --config=buildbuddy DemoApp --remote_header=x-buildbuddy-api-key=<YOUR_API_KEY>
+```
+
+Please note: <EXECUTOR_API_KEY> and <YOUR_API_KEY> are different.
+
+<img width="959" height="458" alt="image" src="https://github.com/user-attachments/assets/408c5ffc-d8ba-41f7-82d5-f225628c59e8" />
+
+
